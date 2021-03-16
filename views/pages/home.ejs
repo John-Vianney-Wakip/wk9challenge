@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/heading') %>
+</head>
+
+<body>
+<%- include('../partials/header') %>
+<div class ="content">
+<% for (let item of users) { %>
+
+<% if (item.name === undefined) { %>
+
+  <h3>"bad data" [Can't Load data for this user]</h3>
+
+<% }else if (item.age ===undefined) {%>
+
+  <h3>Name: <%=item.name%> <br> Age: "missing"  <br> Hobbies: <%=item.hobbies%>  </h3>
+
+<%}else if (item.hobbies ===undefined){%>
+
+  <h3>Name: <%=item.name%> <br> Age: <%=item.age%>  <br>Hobbies: "missing"</h3>
+<%}else {%>
+  <h3>Name: <%=item.name%> <br> Age: <%=item.age%>  <br> Hobbies: <%=item.hobbies%>  </h3>
+
+<% } %>
+
+<% } %>
+</div>
+
+<%- include('../partials/footer') %>
+</body>
+</html>
